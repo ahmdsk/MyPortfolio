@@ -17,7 +17,7 @@ export default function FeaturedVideo() {
             id: 3,
             title: "Create a website with Next.js",
             duration: "2:30"
-        },{
+        }, {
             id: 4,
             title: "NextJS 13 Tutorial",
             duration: "19:00"
@@ -46,10 +46,10 @@ export default function FeaturedVideo() {
                         <tbody>
                             {dataVideo.map((video, idx) => {
                                 return (
-                                    <tr className="hover" key={idx}>
-                                        <td className="max-w-[35px]">{idx+1}</td>
-                                        <td className="max-w-[150px]">{video.title}</td>
-                                        <td className="max-w-[35px]">{video.duration}</td>
+                                    <tr className="hover w-full" key={idx}>
+                                        <td className="w-[35px]">{idx + 1}</td>
+                                        <td className="w-[150px]">{video.title}</td>
+                                        <td className="w-[35px]">{video.duration}</td>
                                     </tr>
                                 )
                             })}
