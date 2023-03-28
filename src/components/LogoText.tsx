@@ -1,5 +1,12 @@
-export default function LogoText() {
+import Link from "next/link";
+
+interface Props {
+  text: string;
+  link?: string;
+}
+
+export default function LogoText({ text, link }: Props) {
   return (
-    <h1 className="font-black text-xl text-zinc-700">Ahmd.</h1>
+    <Link className="font-black text-xl text-zinc-700" href={link ?? ''}>{ text }</Link>
   )
 }

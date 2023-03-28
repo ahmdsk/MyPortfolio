@@ -13,7 +13,7 @@ export default function LatestBlogPost() {
         <Blog />
         <Blog />
 
-        <SectionFoot text="See All Posts" />
+        <SectionFoot text="See All Posts" link="/blog" />
       </div>
     </div>
   )

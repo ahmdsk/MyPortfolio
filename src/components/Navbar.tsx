@@ -3,6 +3,7 @@
 import Link from "next/link";
 import LogoText from "./LogoText";
 import { useState } from "react";
+import { links } from "@/utils/links";
 
 export default function Navbar() {
     let [openNav, setOpenNav] = useState(false);
@@ -15,29 +16,10 @@ export default function Navbar() {
         return setOpenNav(!openNav);
     }
 
-    const links = [
-        {
-            'name': 'About',
-            'href': '/'
-        },
-        {
-            'name': 'Blog',
-            'href': '/'
-        },
-        {
-            'name': 'Portfolio',
-            'href': '/'
-        },
-        {
-            'name': 'Contact',
-            'href': '/'
-        }
-    ]
-
     return (
         <div className="relative">
             <div className="flex items-center justify-between lg:px-32 min-[300px]:px-4 border-b border-zinc-300 py-6">
-                <LogoText />
+                <LogoText text="Ahmd." link="/" />
                 <div className="flex gap-5">
                     <div className="hidden md:flex gap-8">
                         {links.map((link, index) => {
