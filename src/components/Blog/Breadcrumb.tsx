@@ -10,7 +10,7 @@ export default function Breadcrumb({ title }: Props) {
         <div className="text-md breadcrumbs">
             <ul>
                 <li><Link className="underline" href="/">Home</Link></li>
-                <li><Link className="underline" href="/">Blog</Link></li>
+                <li><Link className="underline" href="/blog">Blog</Link></li>
                 <li>{title}</li>
             </ul>
         </div>
