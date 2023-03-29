@@ -22,7 +22,7 @@ export default function Blog({ title, description, link, image, date, category }
                     <div className="flex flex-wrap gap-2">
                         {category ?
                             category?.map((category, index) => {
-                                return <Link href="/" className="rounded-lg border-2 border-blue-600 text-blue-700 px-2 pb-1" key={index}>{category}</Link>
+                                return <Link href="/" className="btn btn-sm btn-primary btn-outline" key={index}>{category}</Link>
                             }) : ''
                         }
                     </div>
