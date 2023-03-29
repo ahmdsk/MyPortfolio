@@ -1,25 +1,40 @@
 import Link from 'next/link'
-import SectionFoot from '../SectionFoot'
 import Image from 'next/image'
 
-export default function Blog() {
-    return (
-        <div className="flex justify-between border-2 border-gray-300 rounded-xl px-3 py-4 mb-6">
-            <div className="basis-10/12 space-y-3">
-                <Link href="/" className="font-medium text-2xl underline underline-offset-[10px] text-zinc-800">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis!</Link>
-                <p className="text-zinc-900">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quibusdam assumenda dolores dolorum ullam reiciendis.</p>
+interface Props {
+    title: string;
+    description: string;
+    link: string;
+    image: string;
+    date: string;
+    category?: string[];
+}
 
-                <div className="flex gap-6 items-center">
-                    <p className="text-zinc-600 text-sm">Wed Sep 21 2022</p>
-                    <div className="space-x-2">
-                        <Link href="/" className="rounded-lg border-2 border-blue-600 text-blue-700 px-2 pb-1">Category</Link>
+export default function Blog({ title, description, link, image, date, category }: Props) {
+    return (
+        <div className="flex md:flex-row min-[300px]:flex-col justify-between border-2 border-gray-300 rounded-xl px-3 py-4 mb-6">
+            <div className="basis-10/12 min-[300px]:order-last md:order-first space-y-3">
+                <Link href={link} className="font-medium text-2xl underline underline-offset-[10px] text-zinc-800">{title}</Link>
+                <p className="text-zinc-900">{description}</p>
+
+                <div className="flex md:flex-row min-[300px]:flex-col gap-6 items-center">
+                    <p className="text-zinc-600 text-sm">{date}</p>
+                    <div className="flex flex-wrap gap-2">
+                        {category ?
+                            category?.map((category, index) => {
+                                return <Link href="/" className="rounded-lg border-2 border-blue-600 text-blue-700 px-2 pb-1" key={index}>{category}</Link>
+                            }) : ''
+                        }
                     </div>
                 </div>
             </div>
-            <div className="basis-2/12">
-                <div className="flex justify-end">
-                    <Image src="https://hyn.gg/blog/pexels-pat-whelen-5579612.jpg" className="w-24 h-24 rounded-lg" alt="Post" width={100} height={100} />
-                </div>
+            <div className="basis-2/12 min-[300px]:order-first md:order-last">
+                {image ?
+                    <div className="md:flex justify-end">
+                        <Image src={image} className="md:w-24 md:h-24 min-[300px]:w-full min-[300px]:mb-4 rounded-lg" alt="Post" width={100} height={100} />
+                    </div>
+                    : ''
+                }
             </div>
         </div>
     )
