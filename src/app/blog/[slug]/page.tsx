@@ -2,6 +2,7 @@ import BlogAuthor from "@/components/Blog/BlogAuthor";
 import BlogTags from "@/components/Blog/BlogTags";
 import Breadcrumb from "@/components/Blog/Breadcrumb";
 import { getPost } from "@/utils/mdx";
+import { marked } from "marked";
 import { BsPinAngleFill } from "react-icons/bs";
 
 type Params = {
@@ -12,7 +13,6 @@ type Params = {
 
 export default function DetailBlog({ params }: Params) {
   const post = getPost(params.slug)
-  console.log(post.content)
 
   return (
     <>
@@ -31,8 +31,8 @@ export default function DetailBlog({ params }: Params) {
         <p className="italic text-gray-600">&quot;{post.data.description}&quot;</p>
       </div>
 
-      <div className="py-3">
-        {post.content}
+      <div className="pt-6 pb-3">
+        <div className="prose prose-slate max-w-none" dangerouslySetInnerHTML={{ __html: marked(post.content) }}></div>
       </div>
     </>
   )
