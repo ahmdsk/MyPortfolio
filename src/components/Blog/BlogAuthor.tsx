@@ -1,10 +1,13 @@
+import moment from "moment";
 import Image from "next/image";
+import readingTime from "reading-time";
 
 interface Props {
     publish_date: string;
+    reading_time: string;
 }
 
-export default function BlogAuthor({ publish_date }: Props) {
+export default function BlogAuthor({ publish_date, reading_time }: Props) {
     return (
         <div className="flex items-center gap-4">
             <div className="avatar">
@@ -14,7 +17,11 @@ export default function BlogAuthor({ publish_date }: Props) {
             </div>
             <div className="">
                 <h2 className="text-sm font-medium">Ahmad Shaleh Kurniawan</h2>
-                <h4 className="text-sm">{publish_date}</h4>
+                <div className="flex items-center gap-x-2">
+                    <h4 className="text-sm">{moment(publish_date).format("ddd MMM  D YYYY")}</h4>
+                    <span className="text-xs text-gray-400">•</span>
+                    <h4 className="text-sm">{readingTime(reading_time).text}</h4>
+                </div>
             </div>
         </div>
     )
