@@ -22,7 +22,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <title>{metadata.title}</title>
       </head>
-      <body>
+      <body className="bg-white dark:bg-[#18181b] transition-all ease-in-out duration-300">
         <Navbar />
         <div className="container mx-auto lg:px-60 xl:px-80 min-[300px]:px-4 py-16">
           {children}

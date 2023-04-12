@@ -10,8 +10,8 @@ interface ISectionFoot {
 export default function SectionFoot({ text, link, blank }: ISectionFoot) {
     return (
         <div className="flex gap-2 items-center">
-            <Link href={link ?? ''} className="font-bold text-zinc-900 text-xl" target={blank ? '_blank' : ''}>{text}</Link>
-            <IoChevronForward className="text-lg" />
+            <Link href={link ?? ''} className="font-bold text-zinc-900 dark:text-slate-200 text-xl" target={blank ? '_blank' : ''}>{text}</Link>
+            <IoChevronForward className="text-lg dark:text-slate-200" />
         </div>
     )
 }

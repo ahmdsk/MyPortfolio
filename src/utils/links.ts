@@ -13,11 +13,7 @@ export const links: Array<Link> = [
         'href': '/blog'
     },
     {
-        'name': 'Resume',
+        'name': 'Projects',
         'href': '/'
-    },
-    {
-        'name': 'Contact',
-        'href': '/contact'
     }
 ]
