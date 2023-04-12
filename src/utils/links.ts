@@ -10,14 +10,14 @@ export const links: Array<Link> = [
     },
     {
         'name': 'Blog',
-        'href': '/'
+        'href': '/blog'
     },
     {
-        'name': 'Portfolio',
+        'name': 'Resume',
         'href': '/'
     },
     {
         'name': 'Contact',
-        'href': '/'
+        'href': '/contact'
     }
 ]
