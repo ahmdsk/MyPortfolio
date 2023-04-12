@@ -34,7 +34,7 @@ export default function FeaturedVideo() {
             <SectionHead title="Featured" subtitle="Videos" />
 
             <div className="mt-4">
-                <div className="overflow-x-auto my-10">
+                <div className="overflow-x-auto my-10 dark:bg-[#18181b]">
                     <table className="table w-full">
                         <thead>
                             <tr>

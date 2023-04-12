@@ -1,5 +1,5 @@
-import Navbar from '@/components/Navbar'
 import './globals.css'
+import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata = {
@@ -7,11 +7,11 @@ export const metadata = {
   description: 'Personal Website of Ahmad Shaleh Kurniawan',
 }
 
-export default function RootLayout({
-  children,
-}: {
+interface Props {
   children: React.ReactNode
-}) {
+}
+
+export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <head>
