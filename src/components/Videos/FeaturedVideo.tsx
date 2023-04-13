@@ -28,7 +28,7 @@ export default function FeaturedVideo() {
             duration: "12:30"
         }
     ]
-
+        
     return (
         <div className="pt-16">
             <SectionHead title="Featured" subtitle="Videos" />

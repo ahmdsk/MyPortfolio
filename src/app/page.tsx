@@ -1,13 +1,11 @@
-import LatestBlogPost from "@/components/Blog/LatestBlogPost";
 import HeroSection from "@/components/HeroSection";
-import FeaturedVideo from "@/components/Videos/FeaturedVideo";
+import LatestBlogPost from "@/components/Blog/LatestBlogPost";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
       <LatestBlogPost />
-      <FeaturedVideo />
     </>
   )
 }
