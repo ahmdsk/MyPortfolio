@@ -7,7 +7,7 @@ interface Props {
 
 export default function Breadcrumb({ title }: Props) {
     return (
-        <div className="text-md breadcrumbs">
+        <div className="text-md breadcrumbs dark:text-slate-200">
             <ul>
                 <li><Link className="underline" href="/">Home</Link></li>
                 <li><Link className="underline" href="/blog">Blog</Link></li>

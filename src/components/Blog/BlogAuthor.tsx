@@ -15,7 +15,7 @@ export default function BlogAuthor({ publish_date, reading_time }: Props) {
                     <Image src="https://avatars.githubusercontent.com/u/85729997?v=4" alt="Post" width={100} height={100} />
                 </div>
             </div>
-            <div className="">
+            <div className="dark:text-slate-200">
                 <h2 className="text-sm font-medium">Ahmad Shaleh Kurniawan</h2>
                 <div className="flex items-center gap-x-2">
                     <h4 className="text-sm">{moment(publish_date).format("ddd MMM  D YYYY")}</h4>
