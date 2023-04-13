@@ -9,7 +9,7 @@ export default function BlogListBody({ title, slug, description, date, category 
             <p className="text-zinc-900 dark:text-slate-200">{description}</p>
 
             <div className="flex md:flex-row min-[300px]:flex-col gap-6 items-center">
-                <p className="text-zinc-600 dark:text-slate-200 text-sm">{moment(date).format("ddd MMM  D YYYY")}</p>
+                <p className="text-zinc-600 dark:text-slate-200 text-sm">{moment(date).format("dddd, D MMM YYYY")}</p>
                 <div className="flex flex-wrap gap-2">
                     {category ?
                         category?.map((category, index) => {

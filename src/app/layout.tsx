@@ -1,10 +1,12 @@
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { myself } from '@/utils/myself'
+import 'moment/locale/id'
 
 export const metadata = {
-  title: 'Ahmad Shaleh Kurniawan | Full Stack Developer',
-  description: 'Personal Website of Ahmad Shaleh Kurniawan',
+  title: `${myself.name} | ${myself.job}`,
+  description: `Personal Website of ${myself.name}`,
 }
 
 interface Props {
