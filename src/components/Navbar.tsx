@@ -2,18 +2,18 @@
 
 import Link from "next/link";
 import LogoText from "./LogoText";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { links } from "@/utils/links";
 
 export default function Navbar() {
     let [openNav, setOpenNav] = useState(false);
-    let [swapActive, setSwapActive] = useState(false);
+    let swapRef: any = useRef(null);
 
     useEffect(() => {
         function checkDarkMode() {
             if(localStorage.darkMode === 'true') {
                 document.documentElement.classList.add('dark');
-                setSwapActive(true);
+                swapRef.current.classList.add('swap-active');
             }
         }
     
@@ -21,11 +21,9 @@ export default function Navbar() {
     }, []);
 
     function toggleTheme() {
-        const checkDarkMode = document.documentElement.classList.contains('dark');
-        setSwapActive(false);
-
-        if (checkDarkMode) {
+        if (document.documentElement.classList.contains('dark')) {
             document.documentElement.classList.remove('dark');
+            swapRef.current.classList.remove('swap-active');
             localStorage.setItem('darkMode', 'false');
         } else {
             document.documentElement.classList.add('dark');
@@ -48,7 +46,7 @@ export default function Navbar() {
                         })}
                     </div>
 
-                    <label className={`swap swap-rotate ${swapActive ? 'swap-active' : ''}`}>
+                    <label className="swap swap-rotate" ref={swapRef}>
                         <input type="checkbox" onClick={toggleTheme} />
 
                         {/* <!-- sun icon --> */}

@@ -15,5 +15,9 @@ export const links: Array<Link> = [
     {
         'name': 'Projects',
         'href': '/'
+    },
+    {
+        'name': 'Resume',
+        'href': '/AhmadShalehKurniawan-CV.pdf'
     }
 ]
